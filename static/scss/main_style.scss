@@ -1,0 +1,144 @@
+@import "mediaQueries";
+.wrapper {
+    position: relative;
+    height: 100%;
+}
+.main {
+    background-image: url("../images/background_main.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    &__background {
+        background-color: rgba(37, 117, 167, 0.659);
+        height: 820px;
+        width: 100%;
+    }
+    @include responsive(phone) {
+        .container {
+            width: 100%;
+        }
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: "Titillium Web", sans-serif;
+        font-size: 90px;
+        font-weight: 700;
+        color: white;
+        padding-top: 250px;
+        @include responsive(big-phone) {
+            font-size: 60px;
+        }
+        @include responsive(phone) {
+            font-size: 30px;
+        }
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: "Noto Sans";
+        font-size: 30px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.687);
+        @include responsive(big-phone) {
+            font-size: 20px;
+        }
+        @include responsive(phone) {
+            font-size: 18px;
+        }
+    }
+}
+.container {
+}
+
+.opportunities {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    height: 100%;
+    &__header {
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        text-align: center;
+        padding-top: 30px;
+        margin-bottom: 40px;
+
+        @include responsive(big-phone) {
+            font-size: 60px;
+        }
+        @include responsive(phone) {
+            padding: 0 10px;
+            font-size: 30px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        flex: auto;
+        @include responsive(tab-port) {
+            justify-content: center;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    &__item {
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include responsive(big-phone) {
+            padding-top: 30px;
+        }
+        @include responsive(phone) {
+            padding: 0 10px;
+        }
+    }
+
+    &__title {
+        font-family: "Noto Sans";
+        font-size: 25px;
+        text-align: center;
+    }
+
+    &__text {
+        font-family: "Noto Sans";
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+.footer {
+    height: 50px;
+    width: 100%;
+    background: rgb(27, 24, 24);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+        color: rgb(154, 147, 147);
+        text-transform: uppercase;
+        opacity: 0.6;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+.container {
+}

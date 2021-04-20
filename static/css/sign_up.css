@@ -1,0 +1,105 @@
+.wrapper-form {
+  padding-top: 250px;
+  width: 196px;
+  margin: 0 auto;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form__name {
+  width: 196px;
+  padding: 0;
+  height: 31px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.login-form__name::-webkit-input-placeholder {
+  color: black;
+}
+
+.login-form__name:-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__name::-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__name::placeholder {
+  color: black;
+}
+
+.login-form__email {
+  width: 196px;
+  padding: 0;
+  height: 31px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.login-form__email::-webkit-input-placeholder {
+  color: black;
+}
+
+.login-form__email:-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__email::-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__email::placeholder {
+  color: black;
+}
+
+.login-form__password {
+  width: 196px;
+  padding: 0;
+  height: 31px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.login-form__password::-webkit-input-placeholder {
+  color: black;
+}
+
+.login-form__password:-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__password::-ms-input-placeholder {
+  color: black;
+}
+
+.login-form__password::placeholder {
+  color: black;
+}
+
+.login-form__submit {
+  margin-top: 20px;
+  height: 30px;
+  width: 150px;
+  background-color: #ee3361;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}

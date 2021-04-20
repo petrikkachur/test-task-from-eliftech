@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/calendar_style.css')}}">
+{% endblock %}
+{% block title %}Calendar{% endblock %}
+{% block body %}
+<div class="wrapper">
+
+    <div class="body">
+        <div class="container">
+            <div class="body__container">
+
+                <div class="body__colum-first">
+                    <div class="body__title">
+                        <h1>Budget Tracker App</h1>
+                    </div>
+                    <div class="calendar">
+                        <div class="calendar__month">
+                            <div class="calendar__date">
+                                <h1></h1>
+                            </div>
+                            <div id="prev" class="calendar__btn prev"><i class="arrow arrow__left"></i></div>
+                            <div id="next" class="calendar__btn next"><i class="arrow arrow__right"></i></div>
+                        </div>
+                        <table id="calendar__table" class="calendar__days">
+
+                        </table>
+
+                    </div>
+                </div>
+                <div class="body__colum-second">
+
+
+                    <form id="add_spent_form" class="form" action="" method="POST">
+                        <input class="form__input-money" type="number" name="spent" placeholder="Spent Amont ($)"
+                            min="1">
+                        <select class="form__select-category" type="text" name="category" required>
+                            <option value="" disabled selected>Category</option>
+                            <option value="Food" class="form__select-option">Food</option>
+                            <option value="Sport" class="form__select-option">Sport</option>
+                            <option value="Clothes" class="form__select-option">Clothes</option>
+                            <option value="Shoes" class="form__select-option">Shoes</option>
+                            <option value="Study" class="form__select-option">Study</option>
+                            <option value="Others" class="form__select-option">Others</option>
+                        </select>
+
+                        <input class="form__input-submit" type="submit" value="Create Entry">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="day-spendings">
+                    <div class="day-spendings__title">
+                        <h3>Day spendings:</h3>
+                    </div>
+                    <div id="day-spendings__list" class="day-spendings__list">
+
+                        <!-- {% for spent in spents_query %}
+
+                        <form class="day-spendings__item">
+                            <input type="hidden" value="{{spent[0]}}">
+                            <div class="day-spendings__inputs">
+                                <div class="day-spendings__category">{{spent[1]}}</div>
+                                <div class="day-spendings__money">{{spent[2]}}$</div>
+                            </div>
+                            <div class="day-spendings__buttons">
+                                <input class="day-spendings__edit" type="submit" value="Edit">
+                                <input class="day-spendings__delete" type="reset" value="Delete">
+                            </div>
+                        </form>
+                        {% endfor %}
+                        {% if totaly %}
+                        <div class="day-spendings__totaly"><span>Total:</span><span>{{totaly}}$</span></div>
+                        {% endif %} -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_calendar.js') }}"></script>
+{% endblock %}

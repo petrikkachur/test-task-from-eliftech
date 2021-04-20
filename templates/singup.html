@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/sign_up.css')}}">
+{% endblock %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<div class="wrapper-form">
+    <form class="login-form" action="" method="post">
+        <input class="login-form__name" type="text" name="name" placeholder="Enter your name:" required>
+        <input class="login-form__email" type="email" name="email" placeholder="Enter your email:" required>
+        <input class="login-form__password" type="password" name="password" placeholder="Enter your password:" minlength="8" required>
+        <input class="login-form__submit" type="submit" value="Sign Up">
+    </form>
+</div>
+{% endblock %}

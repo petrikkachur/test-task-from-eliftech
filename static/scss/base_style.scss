@@ -1,0 +1,270 @@
+@import "mediaQueries";
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: 1000;
+    background: #13a6e1;
+    &::before {
+    }
+
+    a {
+        display: inline-block;
+        position: relative;
+        font-family: "Noto Sans";
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+    &__navbar {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include responsive(phone) {
+            padding: 0 10px;
+        }
+    }
+    &__logo {
+        font-weight: 900;
+        font-size: 25px;
+        width: 103px;
+    }
+
+    &__burger {
+        display: none; /* используем flex для центрирования содержимого */
+        flex-direction: column;
+        align-items: center; /* центрируем содержимое кнопки */
+        width: 26px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+
+        & > span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            top: 0;
+            cursor: pointer;
+        }
+        & > span:before,
+        span:after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: black;
+        }
+
+        & > span::before {
+            content: "";
+            top: 8px;
+        }
+        & > span::after {
+            content: "";
+            top: 16px;
+        }
+        @include responsive(tab-port) {
+            display: flex;
+        }
+    }
+
+    &__menu {
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-transform: uppercase;
+        }
+    }
+
+    &__item {
+        margin-left: 30px;
+        & > a {
+            padding: 14px 0;
+        }
+        & > span {
+            padding: 14px 0;
+            display: inline-block;
+            position: relative;
+            font-family: "Noto Sans";
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        & > span {
+            & > span {
+                position: relative;
+                bottom: 2px;
+                font-size: 10px;
+            }
+        }
+        & > a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 6px;
+            content: "";
+            display: block;
+            height: 2px;
+
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.2s ease 0s, left 0.2s ease 0s;
+            width: 0;
+        }
+
+        &:hover {
+            .dropdown-menu {
+                display: block;
+            }
+            & > a:after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #0988ba;
+    padding: 0;
+    border-radius: 0 0 3px 3px;
+    transform: translateX(-10px);
+    &__item {
+        & > a {
+            display: block;
+            text-align: center;
+            padding: 14px 10px;
+        }
+        &:hover {
+            background: #053f56f3;
+        }
+    }
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    @include responsive(tab-land) {
+        width: 700px;
+    }
+    @include responsive(tab-port) {
+        width: 600px;
+    }
+    @include responsive(big-phone) {
+        width: 450px;
+    }
+    @include responsive(phone) {
+        width: 375px;
+    }
+    @include responsive(phone-small) {
+        width: 300px;
+    }
+}
+@include responsive(tab-port) {
+    .navbar__menu {
+        display: block;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 50px;
+        left: 100%;
+        background: #053f56f3;
+        transition: left 1s;
+    }
+    .navbar__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar__item {
+        padding: 0;
+        font-size: 25px;
+        & > a {
+            color: white !important;
+        }
+        & > span {
+            color: white !important;
+        }
+        &:hover {
+            & > a:after {
+                width: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        position: relative;
+        display: none;
+        background: none !important;
+        box-shadow: none !important;
+        left: 0;
+
+        &__item {
+            & > a {
+                text-align: left;
+                color: white !important;
+            }
+            &:hover {
+                background: none !important;
+            }
+        }
+    }
+}
+.navbar__burger.active {
+    & > span {
+        top: 8px;
+        transform: rotate(45deg);
+        transition: all 0.6s;
+    }
+    & > span:before {
+        top: 0;
+        transform: rotate(90deg);
+        transition: all 0.6s;
+    }
+    & > span:after {
+        top: 0;
+        transform: rotate(90deg);
+        transition: all 0.6s;
+    }
+}
+.navbar__menu.active {
+    left: 0%;
+}
+
+.scrolled {
+    background-color: white;
+    transition: background-color 0.7s;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    .dropdown-menu {
+        background: white;
+        box-shadow: 0 15px 20px black;
+    }
+    a {
+        color: black;
+    }
+    & .navbar__item > a:after {
+        background: black;
+    }
+    & .navbar__item > span {
+        color: black;
+    }
+}

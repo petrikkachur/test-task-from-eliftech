@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/fonts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/base_style.css')}}">
+    
+
+    {% block head %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar__navbar">
+                <a href="" class="navbar__logo">Elif-tech</a>
+                <div class="navbar__burger"><span></span></div>
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item"><a href="{{ url_for('main.main_page') }}">Main</a></li>
+                        {% if not current_user.is_authenticated %}
+                        <li class="navbar__item"><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                        <li class="navbar__item"><a href="{{ url_for('auth.signup') }}">Sing Up</a></li>
+                        {% endif %}
+                        {% if  current_user.is_authenticated %}
+                        <li class="navbar__item closed"><span>Budget Tracker <span>▼</span></span>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-menu__item"><a href="{{ url_for('main.calendar_page') }}">Calendar</a></li>
+                                <li class="dropdown-menu__item"><a href="{{ url_for('main.monthly_report_page') }}">Monthly report</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="navbar__item closed"><span>{{current_user.name}} <span>▼</span></span>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-menu__item"><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                            </ul>
+                        </li>
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script_base.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/main_style.css')}}">
+{% endblock %}
+{% block title %}Main{% endblock %}
+{% block body %}
+<div class="wrapper">
+    <div class="main">
+        <div class="main__background">
+            <div class="container">
+                <div class="main__title">Budget Tracker</div>
+                <div class="main__subtitle">This program give you the ability to record your expenses</div>
+            </div>
+        </div>
+    </div>
+    <div class="opportunities">
+        <div class="container">
+            <div class="opportunities__header">Opportunities</div>
+            <div class="opportunities__row">
+                <div class="opportunities__item"><img src="{{ url_for( 'static', filename='images/speed_arrow.svg')}}"
+                        alt="">
+                    <div class="opportunities__title">Speed</div>
+                    <div class="opportunities__text">You can use our app as fast as speed of light</div>
+                </div>
+                <div class="opportunities__item"><img src="{{ url_for( 'static', filename='images/free.svg')}}"
+                        alt="">
+                    <div class="opportunities__title">Friendly</div>
+                    <div class="opportunities__text">Our app has very fliendly interface, that anybody can understand</div>
+                </div>
+                <div class="opportunities__item"><img
+                        src="{{ url_for( 'static', filename='images/friendly_interface.svg')}}" alt="">
+                    <div class="opportunities__title">Free</div>
+                    <div class="opportunities__text">Our app is free to use. You can use it without any premium or other paid subscription</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__text">@All rights reserved, including those that arise through patent issue or registration on a utility model.</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_main.js') }}"></script>
+
+
+{% endblock %}

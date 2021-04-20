@@ -1,0 +1,333 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 1000;
+  background: #13a6e1;
+}
+
+.navbar a {
+  display: inline-block;
+  position: relative;
+  font-family: "Noto Sans";
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar__navbar {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 450px) {
+  .navbar__navbar {
+    padding: 0 10px;
+  }
+}
+
+.navbar__logo {
+  font-weight: 900;
+  font-size: 25px;
+  width: 103px;
+}
+
+.navbar__burger {
+  display: none;
+  /* используем flex для центрирования содержимого */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* центрируем содержимое кнопки */
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar__burger > span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  top: 0;
+  cursor: pointer;
+}
+
+.navbar__burger > span:before,
+.navbar__burger span:after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+.navbar__burger > span::before {
+  content: "";
+  top: 8px;
+}
+
+.navbar__burger > span::after {
+  content: "";
+  top: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar__burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navbar__menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar__list a {
+  text-transform: uppercase;
+}
+
+.navbar__item {
+  margin-left: 30px;
+}
+
+.navbar__item > a {
+  padding: 14px 0;
+}
+
+.navbar__item > span {
+  padding: 14px 0;
+  display: inline-block;
+  position: relative;
+  font-family: "Noto Sans";
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar__item > span > span {
+  position: relative;
+  bottom: 2px;
+  font-size: 10px;
+}
+
+.navbar__item > a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 6px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  -webkit-transition: width 0.2s ease 0s, left 0.2s ease 0s;
+  transition: width 0.2s ease 0s, left 0.2s ease 0s;
+  width: 0;
+}
+
+.navbar__item:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar__item:hover > a:after {
+  width: 100%;
+  left: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #0988ba;
+  padding: 0;
+  border-radius: 0 0 3px 3px;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.dropdown-menu__item > a {
+  display: block;
+  text-align: center;
+  padding: 14px 10px;
+}
+
+.dropdown-menu__item:hover {
+  background: #053f56f3;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    width: 375px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar__menu {
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 50px;
+    left: 100%;
+    background: #053f56f3;
+    -webkit-transition: left 1s;
+    transition: left 1s;
+  }
+  .navbar__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar__item {
+    padding: 0;
+    font-size: 25px;
+  }
+  .navbar__item > a {
+    color: white !important;
+  }
+  .navbar__item > span {
+    color: white !important;
+  }
+  .navbar__item:hover > a:after {
+    width: 0;
+    left: 0;
+  }
+  .dropdown-menu {
+    position: relative;
+    display: none;
+    background: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    left: 0;
+  }
+  .dropdown-menu__item > a {
+    text-align: left;
+    color: white !important;
+  }
+  .dropdown-menu__item:hover {
+    background: none !important;
+  }
+}
+
+.navbar__burger.active > span {
+  top: 8px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.navbar__burger.active > span:before {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.navbar__burger.active > span:after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.navbar__menu.active {
+  left: 0%;
+}
+
+.scrolled {
+  background-color: white;
+  -webkit-transition: background-color 0.7s;
+  transition: background-color 0.7s;
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+}
+
+.scrolled .dropdown-menu {
+  background: white;
+  -webkit-box-shadow: 0 15px 20px black;
+          box-shadow: 0 15px 20px black;
+}
+
+.scrolled a {
+  color: black;
+}
+
+.scrolled .navbar__item > a:after {
+  background: black;
+}
+
+.scrolled .navbar__item > span {
+  color: black;
+}

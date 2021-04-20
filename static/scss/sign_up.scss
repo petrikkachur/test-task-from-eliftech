@@ -1,0 +1,57 @@
+.wrapper-form {
+    padding-top: 250px;
+    width: 196px;
+    margin: 0 auto;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+        width: 196px;
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        &::placeholder {
+            color: black;
+        }
+    }
+    &__email {
+        width: 196px;
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 20px;
+        &::placeholder {
+            color: black;
+        }
+    }
+
+    &__password {
+        width: 196px;
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 20px;
+        &::placeholder {
+            color: black;
+        }
+    }
+
+    &__submit {
+        margin-top: 20px;
+        height: 30px;
+        width: 150px;
+        background-color: #ee3361;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+}

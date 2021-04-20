@@ -1,0 +1,349 @@
+@import "mediaQueries";
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.wrapper {
+    padding-top: 50px;
+}
+.container {
+    @include responsive(phone) {
+        width: 400px;
+    }
+}
+.header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__row {
+        height: 40px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__selected-month {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        background: grey;
+        border: none;
+        border-radius: 3px;
+        @include responsive(phone) {
+            width: 300px;
+            height: 50px;
+            font-size: 23px;
+            margin-left: 20px;
+        }
+        & > span {
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__item {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 18px;
+        text-align: center;
+        @include responsive(phone) {
+            font-size: 23px;
+        }
+    }
+    &__select {
+        display: none;
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        box-shadow: 0 0 10px grey;
+        overflow-y: scroll;
+        background: white;
+        border-radius: 3px;
+        @include responsive(phone) {
+            width: 300px;
+            height: 400px;
+            font-size: 20px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+    @include responsive(tab-land) {
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    @include responsive(big-phone) {
+        width: 420px;
+        margin: 0 auto;
+    }
+
+    &__first-col {
+        margin-top: 50px;
+    }
+
+    &__second-col {
+        margin-top: 50px;
+        width: 400px;
+    }
+}
+.month-spendings {
+    font-family: "Noto Sans", sans-serif;
+    border: none;
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+    overflow-y: scroll;
+    @include responsive(big-phone) {
+        width: 400px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    &__list {
+    }
+
+    &__titles {
+        font-size: 20px;
+        text-align: left;
+
+        & th {
+            text-align: center;
+            width: 165px;
+        }
+    }
+
+    &__item {
+        text-align: center;
+        @include responsive(phone) {
+            font-size: 18px;
+        }
+        & > td {
+            width: 165px;
+        }
+    }
+}
+.salary {
+    & > form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__input {
+        width: 270px;
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        @include responsive(phone) {
+            width: 300px;
+            height: 50px;
+            font-size: 25px;
+        }
+        &::placeholder {
+            font-size: 14px;
+            color: black;
+            @include responsive(phone) {
+                font-size: 25px;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 10px;
+        height: 30px;
+        width: 270px;
+        background-color: #ee3361;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        @include responsive(phone) {
+            width: 300px;
+            height: 50px;
+            font-size: 25px;
+        }
+    }
+}
+.monthly-incomes {
+    &__title {
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    &__list {
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__item-container {
+        width: 250px;
+        height: 300px;
+        padding: 0 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px grey;
+        overflow-y: scroll;
+        margin-bottom: 30px;
+        @include responsive(phone) {
+            width: 280px;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    }
+    &__item {
+        padding-top: 5px;
+
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include responsive(phone) {
+            height: 25px;
+        }
+    }
+
+    &__money {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        @include responsive(phone) {
+            font-size: 20px;
+        }
+    }
+
+    &__edit {
+        border: none;
+        border-radius: 5px;
+        background: #ee3361;
+        color: white;
+        @include responsive(phone) {
+            height: 25px;
+        }
+    }
+
+    &__delete {
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #ee3361;
+        color: white;
+        @include responsive(phone) {
+            height: 25px;
+        }
+    }
+    &__inputs {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.income-edit-input {
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 3px;
+    @include responsive(phone) {
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+.totaly {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    @include responsive(phone) {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    &__incomes {
+    }
+
+    &__spents {
+    }
+}
+
+.selected {
+    color: white;
+    background: grey;
+}
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    not supported by any browser */
+}

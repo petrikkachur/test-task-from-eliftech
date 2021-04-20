@@ -1,0 +1,207 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.main {
+  background-image: url("../images/background_main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.main__background {
+  background-color: rgba(37, 117, 167, 0.659);
+  height: 820px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+  .main .container {
+    width: 100%;
+  }
+}
+
+.main__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  color: white;
+  padding-top: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main__title {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .main__title {
+    font-size: 30px;
+  }
+}
+
+.main__subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 30px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.687);
+}
+
+@media only screen and (max-width: 600px) {
+  .main__subtitle {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .main__subtitle {
+    font-size: 18px;
+  }
+}
+
+.opportunities {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  height: 100%;
+}
+
+.opportunities__header {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .opportunities__header {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .opportunities__header {
+    padding: 0 10px;
+    font-size: 30px;
+  }
+}
+
+.opportunities__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .opportunities__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.opportunities__row img {
+  width: 200px;
+  height: 200px;
+}
+
+.opportunities__item {
+  width: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .opportunities__item {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .opportunities__item {
+    padding: 0 10px;
+  }
+}
+
+.opportunities__title {
+  font-family: "Noto Sans";
+  font-size: 25px;
+  text-align: center;
+}
+
+.opportunities__text {
+  font-family: "Noto Sans";
+  font-size: 15px;
+  text-align: center;
+}
+
+.footer {
+  height: 50px;
+  width: 100%;
+  background: #1b1818;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__text {
+  color: #9a9393;
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-size: 14px;
+  text-align: center;
+}

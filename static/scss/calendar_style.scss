@@ -1,0 +1,277 @@
+@import "mediaQueries";
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper {
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+.container {
+    @include responsive(phone) {
+        width: 400px;
+        padding: 0 10px;
+    }
+}
+
+.body {
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include responsive(tab-port) {
+            justify-content: center;
+        }
+        @include responsive(tab-land) {
+            justify-content: center;
+        }
+    }
+
+    &__colum-first {
+    }
+
+    &__title {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 15px;
+        @include responsive(tab-land) {
+            text-align: center;
+        }
+    }
+
+    &__colum-second {
+        margin-top: 150px;
+        @include responsive(tab-port) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        @include responsive(tab-land) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        & > .form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+    }
+
+    &__username {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.today-date {
+    background-color: #13a6e1;
+    border-radius: 30px;
+}
+.highlight-date {
+    background-color: #ee3361;
+    border-radius: 30px;
+}
+
+.calendar {
+    border: 1px solid grey;
+    width: 360px;
+
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    &__month {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__date {
+        font-family: "Noto Sans", sans-serif;
+        width: 300px;
+    }
+
+    &__btn {
+    }
+
+    &__days {
+        text-align: center;
+        width: 100%;
+        th {
+            font-size: 20px;
+        }
+        td {
+            font-size: 20px;
+            width: 35px;
+            height: 47px;
+        }
+    }
+}
+.prev {
+}
+.next {
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    &__input-money {
+        width: 296px;
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        &::placeholder {
+            color: black;
+            @include responsive(tab-land) {
+                font-size: 18px;
+            }
+        }
+        @include responsive(tab-land) {
+            width: 350px;
+            height: 40px;
+            font-size: 18px;
+        }
+    }
+
+    &__select-category {
+        width: 300px;
+        margin-top: 20px;
+        height: 35px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        @include responsive(tab-land) {
+            width: 354px;
+            height: 44px;
+            font-size: 18px;
+        }
+    }
+
+    &__select-option {
+    }
+
+    &__input-submit {
+        margin-top: 20px;
+        height: 30px;
+        width: 150px;
+        background-color: #ee3361;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        @include responsive(tab-land) {
+            width: 175px;
+            height: 49px;
+        }
+    }
+}
+.footer {
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+.day-spendings {
+    &__title {
+        font-family: "Noto Sans", sans-serif;
+        @include responsive(tab-land) {
+            font-size: 20px;
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+        width: 400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 5px;
+        @include responsive(tab-land) {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__category {
+    }
+
+    &__money {
+    }
+
+    &__edit {
+        border: none;
+        border-radius: 5px;
+        background: #ee3361;
+        color: white;
+        @include responsive(tab-land) {
+            height: 25px;
+        }
+    }
+
+    &__delete {
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #ee3361;
+        color: white;
+        @include responsive(tab-land) {
+            height: 25px;
+        }
+    }
+    &__inputs {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__totaly {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > span {
+            font-family: "Noto Sans", sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            @include responsive(tab-land) {
+                font-size: 18px;
+            }
+        }
+    }
+}
+.category-edit-input {
+    width: 70px;
+}
+.spent-edit-input {
+    width: 70px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow__right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow__left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
